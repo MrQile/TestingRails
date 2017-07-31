@@ -2,16 +2,12 @@
 
 one:
   name: MyString
-  category_id: 1
-  speed: MyString
+  value: 1
   size: MyString
-  price: 1
   description: 
 
 two:
   name: MyString
-  category_id: 1
-  speed: MyString
+  value: 1
   size: MyString
-  price: 1
   description: 
