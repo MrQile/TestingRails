@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root 'statics#index'
 
   get 'statics/new'
+
+  post 'statics/create'
   resources :products
 end
