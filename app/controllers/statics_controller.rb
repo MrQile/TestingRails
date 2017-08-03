@@ -7,6 +7,10 @@ class StaticsController < ApplicationController
 		@product = Product.new
 	end
 
+	def show
+		@product = Product.find(params[:prod_id])
+	end
+	
 	def create
 		@product = Product.new(product_params)
 		if @product.save

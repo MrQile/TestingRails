@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   get 'statics/new'
 
   post 'statics/create'
+
+  get 'statics/show'
   resources :products
 end
