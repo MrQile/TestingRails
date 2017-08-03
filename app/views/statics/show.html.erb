@@ -1,4 +1,11 @@
 <h1>Product listing now</h1>
 
-<h5><%=@product.name%></h5>
-<h5><%=@product.value%></h5>
+<% @product_attribute.each do |attribute| %>
+	<li><%=attribute.name%></li>
+	<li><%=attribute.value%></li>
+	<li><%=attribute.size%></li>
+	<li><%=attribute.description%></li>
+
+
+<% end %>
+

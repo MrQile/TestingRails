@@ -8,7 +8,8 @@ class StaticsController < ApplicationController
 	end
 
 	def show
-		@product = Product.find(params[:prod_id])
+		product_value = Product.find(params[:prod_id])
+		@product_attribute = ProductAttribute.where(value: product_value.value)
 	end
 	
 	def create

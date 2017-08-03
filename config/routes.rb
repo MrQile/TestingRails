@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   get 'statics/show'
   resources :products
+  resources :product_attributes
 end
