@@ -8,7 +8,7 @@ class StaticsController < ApplicationController
 	end
 
 	def show
-		product_value = Product.find(params[:prod_id])
+		product_value = Product.find(params[:id])
 		@product_attribute = ProductAttribute.where(value: product_value.value)
 	end
 	
@@ -18,6 +18,19 @@ class StaticsController < ApplicationController
 			redirect_to root_url
 		else
 			render 'new'
+		end
+	end
+
+	def edit
+		@product = Product.find(params[:id])
+	end
+
+	def update
+		@product = Product.find(params[:id])
+		if @product.update(product_params)
+			redirect_to root_url
+		else
+			render 'edit'
 		end
 	end
 

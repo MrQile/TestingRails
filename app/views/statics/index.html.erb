@@ -1,7 +1,8 @@
 <h1>Listing the products in home page</h1>
 
 <% @products.each do |product| %>
-	<li><%=link_to product.name, statics_show_path(prod_id: product.id)%></li>
+	<li><%=link_to product.name, static_path(product)%></li>
+	<li><%=link_to "Edit", edit_static_path(product)%></li>
 <% end %>
 
-<%= link_to "New Product", statics_new_path %>
+<%= link_to "New Product", new_static_path %>
