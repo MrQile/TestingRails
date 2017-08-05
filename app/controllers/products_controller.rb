@@ -11,13 +11,25 @@ class ProductsController < ApplicationController
 
 	def new
 		@product = ProductAttribute.new
-		@value = params[:value]
+	end
+
+	def edit
+		@product = ProductAttribute.find(params[:id])
+	end
+
+	def update
+		@product = ProductAttribute.find(params[:id])
+		if @product.update(product_params)
+			redirect_to products_url
+		else
+			render 'edit'
+		end
 	end
 
 	def create
 		@product = ProductAttribute.new(product_params)
 		if @product.save
-			redirect_to statics_url
+			redirect_to products_url
 		else
 			redirect_to new_product_url
 		end
@@ -28,7 +40,6 @@ class ProductsController < ApplicationController
 		@product.destroy
 		redirect_to products_url
 	end
-
 
 	private
 
