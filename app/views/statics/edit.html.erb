@@ -1,11 +1,11 @@
-<h1> New Product Creation </h1>
+<h1> Edit Product </h1>
 
-<%= form_for(@product, url: statics_path) do |f| %>
+<%= form_for(@product, url: static_path, method: :patch) do |f| %>
 	<%= f.label :name %>
 	<%= f.text_field :name, class: 'form-control' %>
 
 	<%= f.label :value %>
 	<%= f.text_field :value, class: 'form-control' %>
 
-	<%= f.submit "Create", class: "btn btn-primary" %>
+	<%= f.submit "Update", class: "btn btn-primary" %>
 <% end %>

@@ -1,3 +1,3 @@
 class ProductAttribute < ApplicationRecord
-	belongs_to :product, foreign_key: "value"
+	belongs_to :product, dependent: :destroy, foreign_key: "value"
 end
