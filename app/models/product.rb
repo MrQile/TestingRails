@@ -1,4 +1,3 @@
 class Product < ApplicationRecord
-	self.primary_key = "value"
-	has_many :product_categories ,dependent: :destroy
+	has_many :product_attributes , dependent: :destroy, :foreign_key => :value, :primary_key => :value
 end

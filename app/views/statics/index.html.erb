@@ -1,10 +1,8 @@
 <h1>Listing the products in home page</h1>
 
 <% @products.each do |product| %>
-	<li><%=link_to product.name, static_path(product)%>    <%= link_to "Edit", edit_static_path(product) %></li>
+	<li><%=link_to product.name, static_path(product)%>    <%= link_to "Edit", edit_static_path(product) %>    <%= link_to "Delete", static_path(product) , method: :delete, data: {confirm: "are u sure?"} %> </l1>
 <% end %>
 
-<%= link_to "New Product", new_static_path %>
-
-
-<%= link_to   "Product Attributes List", products_path %>
+<h3><%= link_to "New Product", new_static_path %></h3>
+	<h3><%= link_to   "Product Attributes List", products_path %></h3>

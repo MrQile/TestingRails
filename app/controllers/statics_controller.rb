@@ -34,6 +34,11 @@ class StaticsController < ApplicationController
 		end
 	end
 
+	def destroy
+		Product.find(params[:id]).destroy
+		redirect_to root_url
+	end
+
 	private
 
 		def product_params

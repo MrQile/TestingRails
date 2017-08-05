@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 	def itemsnew
 		@product = ProductAttribute.new
 	end
-	
+
 	def new
 		@product = ProductAttribute.new
 		@value = params[:value]
@@ -21,6 +21,12 @@ class ProductsController < ApplicationController
 		else
 			redirect_to new_product_url
 		end
+	end
+
+	def destroy
+		@product = ProductAttribute.find(params[:id])
+		@product.destroy
+		redirect_to products_url
 	end
 
 

@@ -2,6 +2,7 @@
 
 <% @products.each do |product| %>
 	<l1> <%= product.name %> </l1>
+	<l1> <%= link_to "Delete", product_path(product) , method: :delete, data: {confirm: "are u sure?"} %> </l1>
 <% end %>
 
 <%= link_to "Create Product Items", products_itemsnew_path %>
