@@ -1,7 +1,7 @@
 <h1>Product listing now</h1>
 
 <% @attributes.each do |attribute| %>
-	<li><%= link_to attribute.name, product_path(attribute)%>  <%= link_to 'Edit', edit_product_path(attribute, val: "true")%>  <%= link_to 'Delete', product_path(attribute, val: "true"), method: :delete, data: {confirm: "are u sure?"}%></li>
+	<li><%= link_to attribute.name, product_path(attribute)%><%= image_tag attribute.image.url(:medium) %>  <%= link_to 'Edit', edit_product_path(attribute, val: "true")%>  <%= link_to 'Delete', product_path(attribute, val: "true"), method: :delete, data: {confirm: "are u sure?"}%></li>
 <% end %>
 
 <h4><%= link_to "Create New Product Attributes", new_product_path(value: @product.value) %></h4>

@@ -1,6 +1,6 @@
 <h1>Add the New Product Attribute</h1>
 
-<%= form_for(@product, url: products_path(@product, val: "true")) do |f|%>
+<%= form_for(@product, url: products_path(@product, val: "true"), html: { multipart: true }) do |f|%>
 	<%= f.label :name %>
 	<%= f.text_field :name, class: 'form-control' %>
 
@@ -11,6 +11,9 @@
 
 	<%= f.label :description %>
 	<%= f.text_field :description, class: 'form-control' %>
+
+	<%= f.label :image %>
+	<%= f.file_field :image , class: 'form-control' %>
 
 	<%= f.submit "Create", class: 'btn btn-primary' %>
 <% end %>
