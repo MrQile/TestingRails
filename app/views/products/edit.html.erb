@@ -1,6 +1,6 @@
 <h1>Edit Product Items </h1>
 
-<%= form_for(@product, url: product_path, method: :patch) do |f| %>
+<%= form_for(@product, url: product_path(@product,val: params[:val]), method: :patch) do |f| %>
 	<%= f.label :name %>
 	<%= f.text_field :name , class: 'form-control' %>
 

@@ -17,10 +17,18 @@ class ProductsController < ApplicationController
 		@product = ProductAttribute.find(params[:id])
 	end
 
+	def show
+		@product = ProductAttribute.find(params[:id])
+	end
+
 	def update
 		@product = ProductAttribute.find(params[:id])
 		if @product.update(product_params)
-			redirect_to products_url
+			if params[:val] == "true"
+				redirect_to statics_url
+			else
+				redirect_to products_url
+			end
 		else
 			render 'edit'
 		end
