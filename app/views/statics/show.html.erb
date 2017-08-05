@@ -1,5 +1,10 @@
 <h1>Product listing now</h1>
 
-<% @attribute.each do |attribute| %>
+<% @attributes.each do |attribute| %>
 	<li><%= attribute.name%></li>
+	<li><%= attribute.value%></li>
+	<li><%= attribute.size%></li>
+	<li><%= attribute.description%></li>
 <% end %>
+
+<%= link_to "Create New Product Attributes", new_product_path(value: @product.value) %>

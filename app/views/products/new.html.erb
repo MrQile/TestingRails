@@ -1,0 +1,16 @@
+<h1>Add the New Product Attribute</h1>
+
+<%= form_for(@product, url: products_path) do |f|%>
+	<%= f.label :name %>
+	<%= f.text_field :name, class: 'form-control' %>
+
+	<%= hidden_field_tag :value, @value %>
+
+	<%= f.label :size %>
+	<%= f.text_field :size, class: 'form-control' %>
+
+	<%= f.label :description %>
+	<%= f.text_field :description, class: 'form-control' %>
+
+	<%= f.submit "Create", class: 'btn btn-primary' %>
+<% end %>
