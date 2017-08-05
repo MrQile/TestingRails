@@ -37,8 +37,12 @@ class ProductsController < ApplicationController
 	def create
 		@product = ProductAttribute.new(product_params)
 		if @product.save
-			prod_id = Product.find_by(value: @product.value) 
-			redirect_to static_path(prod_id.id)
+			if params[:val] == "true"
+				prod_id = Product.find_by(value: @product.value) 
+				redirect_to static_path(prod_id.id)
+			else
+				redirect_to products_url
+			end
 		else
 			redirect_to new_product_url
 		end

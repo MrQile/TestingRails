@@ -1,6 +1,6 @@
 <h1>Add the New Product Attribute</h1>
 
-<%= form_for(@product, url: products_path) do |f|%>
+<%= form_for(@product, url: products_path(@product, val: "true")) do |f|%>
 	<%= f.label :name %>
 	<%= f.text_field :name, class: 'form-control' %>
 
