@@ -51,7 +51,12 @@ class ProductsController < ApplicationController
 	def destroy
 		@product = ProductAttribute.find(params[:id])
 		@product.destroy
-		redirect_to products_url
+		if params[:val] == "true"
+			prod_id = Product.find_by(value: @product.value) 
+			redirect_to static_path(prod_id.id)
+		else
+			redirect_to products_url
+		end
 	end
 
 	private
