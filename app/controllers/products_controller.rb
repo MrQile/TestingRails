@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
 		@product = ProductAttribute.find(params[:id])
 		if @product.update(product_params)
 			if params[:val] == "true"
-				redirect_to statics_url
+				redirect_to product_path
 			else
 				redirect_to products_url
 			end
