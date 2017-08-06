@@ -2,7 +2,7 @@
 
 <% @products.each do |product| %>
 	<l1> <%= product.name %> </l1>
-	<li> <%= image_tag product.image.url(:thumb) %>
+	<li> <%= image_tag(product.image.url(:thumbnail)) %> </li>
 	<l1> <%= link_to "Edit", edit_product_path(product) %></l1>
 	<li> <%= link_to "Delete", product_path(product) , method: :delete, data: {confirm: "are u sure?"} %> </l1>
 <% end %>
